@@ -12,13 +12,16 @@
     "start:jekyll": "bundle exec jekyll server --incremental",
     "start:livereload": "livereload public -p 5678 -d",
     "start:datocms": "dato dump",
-    "start": "concurrently -p \"[{name}]\" -c \"blue,red,green,yellow\" -k -n jekyll,webpack,livereload,datocms \"npm run start:jekyll\" \"npm run start:assets\" \"npm run start:livereload\" \"npm run start:datocms\""
+    "start": "concurrently -p \"[{name}]\" -c \"blue,red,green,yellow\" -k -n jekyll,webpack,livereload,datocms \"npm run start:jekyll\" \"npm run start:assets\" \"npm run start:livereload\" \"npm run start:datocms\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "imagesloaded": "^4.1.1",
     "lory.js": "^2.2.1",
     "masonry-layout": "^4.1.1",
-    "scroll-lazy": "^1.0.3"
+    "scroll-lazy": "^1.0.3",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -34,5 +37,6 @@
     "sort-by": "^1.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0"
-  }
+  },
+  "snyk": true
 }
